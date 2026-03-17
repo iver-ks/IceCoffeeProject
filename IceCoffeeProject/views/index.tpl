@@ -14,7 +14,7 @@
                 где каждый глоток — встреча с идеальным вкусом.
             </p>
             <!-- Переход к выбору продукции -->
-            <a href="#" class="btn btn-hero">Выбрать кофе</a>
+            <a href="#products" class="btn btn-hero">Выбрать кофе</a>
         </div>
         <!-- Изображение продукта -->
         <div class="hero-image">
@@ -24,24 +24,49 @@
 </section>
 
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Bottle gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://bottlepy.org/docs/dev/index.html">Learn more &raquo;</a></p>
+<!-- Секция меню -->
+<section class="products-section" id="products">
+    <!-- Заголовок секции -->
+    <h1 class="products-title">МЕНЮ</h1>
+    <!-- Контейнер карточек товаров -->
+    <div class="products-grid">
+        <!-- Карточка американо -->
+        <div class="product-card">
+            <!-- Изображение напитка -->
+            <div class="product-image">
+                <img src="/static/images/americano.png" alt="americano">
+            </div>
+            <!-- Информация о продукте -->
+            <div class="product-info">
+                <h3 class="product-name">Американо</h3>
+                <p class="product-price">120 ₽</p>
+                <!-- Ссылка на подробное описание -->
+                <a href="https://www.xleb.ru/catalog/tproduct/690538402-166672586861-ais-amerikano" class="btn-details-full">Подробнее</a>
+            </div>
+        </div>
+
+        <!-- Карточка латте -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/static/images/latte.png" alt="Latte">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Латте</h3>
+                <p class="product-price">140 ₽</p>
+                <a href="https://www.xleb.ru/catalog/tproduct/690538402-171784159271-ais-latte" class="btn-details-full">Подробнее</a>
+            </div>
+        </div>
+
+        <!-- Карточка матчи -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/static/images/matcha.png" alt="Matcha">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Матча</h3>
+                <p class="product-price">160 ₽</p>
+                <a href="https://www.xleb.ru/catalog/tproduct/690538402-757930988241-ais-matcha-zelenaya" class="btn-details-full">Подробнее</a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
+</section>

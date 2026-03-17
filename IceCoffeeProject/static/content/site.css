@@ -1,5 +1,9 @@
 /* === Общие стили страницы === */
 
+html {
+    scroll-behavior: smooth; /* плавная прокрутка */
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -95,6 +99,8 @@ input[type="checkbox"].input-validation-error {
         background-color: #7a8f80 !important;
     }
 
+/* === Главная страница === */
+
 /* === Hero-секция (первый экран) === */
 
 /* Основной контейнер секции */
@@ -149,6 +155,7 @@ input[type="checkbox"].input-validation-error {
     /* Эффект наведения на кнопку */
     .btn-hero:hover {
         background-color: #7a8f80;
+        color: #fff;
         transform: translateY(-2px); /* лёгкое "поднятие" кнопки */
     }
 
@@ -178,6 +185,99 @@ input[type="checkbox"].input-validation-error {
         transform: translateY(-15px);
     }
 }
+
+/* === Секция меню === */
+
+/* Основной контейнер секции */
+.products-section {
+    padding: 40px 0 80px;
+}
+
+/* Заголовок секции */
+.products-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #E6D5B8;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+}
+
+/* Контейнер карточек */
+.products-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Карточка продукта */
+.product-card {
+    background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
+    border-radius: 20px;
+    padding: 25px;
+    width: 260px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+    /* Эффект наведения на карточку */
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+
+/* Изображение продукта */
+.product-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+    /* Ограничение размеров изображения */
+    .product-image img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+/* Название продукта */
+.product-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+/* Стоимость продукта */
+.product-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #8FA396;
+    margin: 0 0 18px 0;
+}
+
+/* Кнопка подробностей */
+.btn-details-full {
+    background-color: #8FA396;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+    /* Эффект наведения на кнопку */
+    .btn-details-full:hover {
+        background-color: #7a8f80;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
 /* === Страница About - О нас === */
 
 /* Основной контейнер секции */
