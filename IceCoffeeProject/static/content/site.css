@@ -3,6 +3,8 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #231815 !important;
+    color: #E6D5B8 !important;
     font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -50,6 +52,7 @@ input[type="checkbox"].input-validation-error {
 /* Основной цвет navbar */
 .navbar-inverse {
     background-color: #231815 !important;
+    border: none;
 }
 
 /* Логотип / название бренда */
@@ -81,7 +84,6 @@ input[type="checkbox"].input-validation-error {
 /* Кнопка "Контакты" в навигации */
 .btn-contact {
     background-color: #8FA396 !important;
-    color: #fff !important;
     border-radius: 20px;
     padding: 10px 25px !important;
     margin-top: 8px;
@@ -92,6 +94,90 @@ input[type="checkbox"].input-validation-error {
     .btn-contact:hover {
         background-color: #7a8f80 !important;
     }
+
+/* === Hero-секция (первый экран) === */
+
+/* Основной контейнер секции */
+.hero-section {
+    padding: 100px 0 60px;
+    min-height: 600px;
+}
+
+/* Flex-контейнер для выравнивания текста и изображения */
+.hero-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Текстовый контейнер */
+.hero-text {
+    width: 55%;
+    padding-right: 20px;
+    z-index: 2; /* поверх изображения при наложении */
+}
+
+/* Заголовок (основной слоган) */
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 25px 0;
+}
+
+/* Описание под заголовком */
+.hero-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #C9B8A0;
+    margin-bottom: 35px;
+}
+
+/* Кнопка перехода к выбору продукции */
+.btn-hero {
+    background-color: #8FA396;
+    color: #fff;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    /* Эффект наведения на кнопку */
+    .btn-hero:hover {
+        background-color: #7a8f80;
+        transform: translateY(-2px); /* лёгкое "поднятие" кнопки */
+    }
+
+/* Блок с изображением */
+.hero-image {
+    width: 45%;
+    text-align: right;
+    position: sticky; /* фиксация изображения при прокрутке */
+    right: 0;
+    top: 120px;
+    z-index: 1;
+}
+
+/* Изображение продукта */
+.hero-image img {
+    max-width: 90%;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Анимация изображения */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
 
 /* === Подвал сайта === */
 footer {

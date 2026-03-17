@@ -1,10 +1,28 @@
 % rebase('layout.tpl', title='Главная', year=year)
 
-<div class="jumbotron">
-    <h1>Bottle</h1>
-    <p class="lead">Bottle is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://bottlepy.org/docs/dev/index.html" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+<!-- Hero-секция (первый экран сайта) -->
+<section class="hero-section">
+    <div class="hero-content">
+    <!-- Текстовый блок -->
+        <div class="hero-text">
+            <!-- Основной слоган бренда -->
+            <h1 class="hero-title">Открой для себя превосходный вкус в каждом глотке!</h1>
+            <!-- Краткое описание -->
+            <p class="hero-description">
+                У нас кофе — не просто напиток, а искусство. 
+                Приглашаем вас на уникальное кофейное путешествие, 
+                где каждый глоток — встреча с идеальным вкусом.
+            </p>
+            <!-- Переход к выбору продукции -->
+            <a href="#" class="btn btn-hero">Выбрать кофе</a>
+        </div>
+        <!-- Изображение продукта -->
+        <div class="hero-image">
+            <img src="/static/images/coffee-hero.png" alt="Coffee" class="img-responsive">
+        </div>
+    </div>         
+</section>
+
 
 <div class="row">
     <div class="col-md-4">
