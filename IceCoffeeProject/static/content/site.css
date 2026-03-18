@@ -365,3 +365,97 @@ footer {
     margin-top: 40px;
     border-top: 1px solid #3a2f2a;
 }
+/* === Страница Contacts - Контакты === */
+
+/* Основной контейнер секции */
+.contact-section {
+    padding: 40px 0 60px;
+}
+
+/* Заголовок */
+.contact-title {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    color: #E6D5B8;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* Подзаголовок */
+.contact-subtitle {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+    .contact-subtitle p {
+        font-size: 16px;
+        color: rgba(201, 184, 160, 0.8);
+    }
+
+/* Контейнер для карточек */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Карточка */
+.contact-card {
+    background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+    /* Декоративная линия */
+    .contact-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8FA396, #a3b8a8);
+        transform: scaleX(0); /* скрыта по умолчанию */
+        transition: transform 0.3s ease;
+    }
+
+    /* Эффект карточки */
+    .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+        /* Анимация линии при наведении */
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+/* Иконка карточки */
+.contact-icon-img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Основной текст (заголовок) */
+.contact-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Дополнительный текст */
+.contact-card-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(201, 184, 160, 0.9);
+    margin: 0;
+}
+
