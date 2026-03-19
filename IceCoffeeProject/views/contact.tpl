@@ -44,4 +44,36 @@
             </p>
         </div>
     </div>
+    <!-- Карта и информационный блок -->
+<div class="contact-map">
+    <!-- Контейнер карты -->
+    <div class="map-container">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A606c80543add0e516b4883f7a6da4c247e3a8c422c58909651dac46c34dfb1ca&amp"
+            width="100%"
+            height="450">
+        </iframe>
+    </div>
+    
+    <!-- Информационный блок -->
+    <div class="map-info">
+        <!-- Название точки -->
+        <h4>ICE Coffee - Санкт-Петербург</h4>
+        <!-- Адрес -->
+        <div class="info-row">
+            <img src="/static/images/icons/mini-location.png" alt="Адрес" class="info-icon">
+            <p>Бухарестская ул., 49/43</p>
+        </div>
+        <!-- Адрес -->
+        <div class="info-row">
+            <img src="/static/images/icons/clock.png" alt="Время работы" class="info-icon">
+            <p>Ежедневно: 8:00 - 22:00</p>
+        </div>
+        <!-- Рейтинг -->
+        <div class="map-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-value">4.9 (2,458 отзывов)</span>
+        </div>
+    </div>
+</div>
+
 </section>
