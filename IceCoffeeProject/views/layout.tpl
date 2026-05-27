@@ -30,6 +30,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/about">О нас</a></li>
+                    <li><a href="/reviews">Отзывы</a></li>
                     <!-- Кнопка перехода на страницу контактов -->
                     <li><a href="/contact" class="btn-contact">Контакты</a></li>
                 </ul>

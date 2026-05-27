@@ -33,3 +33,32 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/reviews')
+@view('reviews')
+def reviews():
+    """Renders the reviews page."""
+    return dict(
+        title='Отзывы',
+        year=datetime.now().year,
+        reviews=[
+            {
+                'rating': 5,
+                'author': 'Алина',
+                'date': '2026-05-20',
+                'text': 'Очень понравился холодный латте. Напиток нежный, не слишком сладкий, а подача выглядит аккуратно и стильно.'
+            },
+            {
+                'rating': 4,
+                'author': 'Мария',
+                'date': '2026-05-18',
+                'text': 'Брала айс-капучино и десерт. Всё свежее, вкусное, быстро приготовили. В кофейне приятная атмосфера.'
+            },
+            {
+                'rating': 5,
+                'author': 'Ксения',
+                'date': '2026-05-15',
+                'text': 'Понравилось обслуживание и спокойная музыка. Отличное место, чтобы взять кофе навынос и немного отдохнуть.'
+            }
+        ]
+    )
