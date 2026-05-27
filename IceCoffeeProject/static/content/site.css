@@ -1,7 +1,8 @@
 ﻿/* === Р С›Р В±РЎвЂ°Р С‘Р Вµ РЎРѓРЎвЂљР С‘Р В»Р С‘ РЎРѓРЎвЂљРЎР‚Р В°Р Р…Р С‘РЎвЂ РЎвЂ№ === */
 
 html {
-    scroll-behavior: smooth; /* Р С—Р В»Р В°Р Р†Р Р…Р В°РЎРЏ Р С—РЎР‚Р С•Р С”РЎР‚РЎС“РЎвЂљР С”Р В° */
+    scroll-behavior: smooth; /* плавная прокрутка */
+    scroll-padding-top: 95px;
 }
 
 body {
@@ -584,6 +585,7 @@ footer {
 
 .reviews-list-block {
     max-width: 1100px;
+    scroll-margin-top: 40px;
 }
 
 .review-form-title {
@@ -591,6 +593,18 @@ footer {
     color: #fff;
     font-size: 24px;
     font-weight: 700;
+    text-align: center;
+}
+
+.review-success {
+    margin: -8px 0 16px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(143, 163, 150, 0.18);
+    border: 1px solid rgba(143, 163, 150, 0.35);
+    color: #E6D5B8;
+    font-size: 14px;
+    line-height: 1.5;
     text-align: center;
 }
 
@@ -620,7 +634,7 @@ footer {
 }
 
 .review-textarea {
-    resize: vertical;
+    resize: none;
     min-height: 120px;
 }
 
@@ -634,6 +648,14 @@ footer {
     margin-top: 6px;
     color: #d98f8f;
     font-size: 12px;
+}
+
+.review-hint {
+    display: block;
+    margin-top: 6px;
+    color: #a8907c;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .rating-select {
@@ -761,13 +783,7 @@ footer {
     font-size: 16px;
     line-height: 1.7;
 }
-
-.btn-review-more[disabled] {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-.articles-page {
+`r`n`r`n.articles-page {
     padding: 22px 0 18px;
 }
 
@@ -1238,3 +1254,4 @@ footer {
         width: 100%;
     }
 }
+
