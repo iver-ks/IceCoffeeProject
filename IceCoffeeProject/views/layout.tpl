@@ -1,19 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Динамический заголовок страницы -->
     <title>{{ title }} - ICE Coffee</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-    <!-- Подключение Google-шрифта Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
 <body>
-    <!-- Навигационная панель сайта-->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,25 +19,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- Название бренда (ссылка на главную страницу) -->
                 <a href="/" class="navbar-brand">ICECOFFEE</a>
             </div>
-            <!-- Основное меню навигации -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/about">О нас</a></li>
-                    <!-- Кнопка перехода на страницу контактов -->
-                    <li><a href="/contact" class="btn-contact">Контакты</a></li>
+                    <li><a href="/" class="{{'nav-active' if nav_page == 'home' else ''}}">Главная</a></li>
+                    <li><a href="/about" class="{{'nav-active' if nav_page == 'about' else ''}}">О нас</a></li>
+                    <li><a href="/articles" class="{{'nav-active' if nav_page == 'articles' else ''}}">Статьи</a></li>
+                    <li><a href="/contact" class="btn-contact {{'nav-active' if nav_page == 'contact' else ''}}">Контакты</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Основной контейнер страницы -->
     <div class="container body-content">
         {{!base}}
-        <!-- Подвал сайта -->
         <footer>
             <p>&copy; {{ year }} - ICE Coffee</p>
         </footer>

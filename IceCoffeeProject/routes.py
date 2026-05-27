@@ -2,7 +2,7 @@
 Routes and views for the bottle application.
 """
 
-from bottle import route, view
+from bottle import route, request, view
 from datetime import datetime
 
 @route('/')
@@ -11,6 +11,8 @@ from datetime import datetime
 def home():
     """Renders the home page."""
     return dict(
+        title='Главная',
+        nav_page='home',
         year=datetime.now().year
     )
 
@@ -19,8 +21,9 @@ def home():
 def contact():
     """Renders the contact page."""
     return dict(
-        title='Contact',
+        title='Контакты',
         message='Your contact page.',
+        nav_page='contact',
         year=datetime.now().year
     )
 
@@ -29,7 +32,22 @@ def contact():
 def about():
     """Renders the about page."""
     return dict(
-        title='About',
+        title='О нас',
         message='Your application description page.',
+        nav_page='about',
+        year=datetime.now().year
+    )
+
+@route('/articles', method=['GET', 'POST'])
+@view('articles')
+def articles():
+    """Renders the articles page (design with static form)."""
+    if request.method == 'POST':
+        # Backend logic will be connected later.
+        pass
+
+    return dict(
+        title='Статьи',
+        nav_page='articles',
         year=datetime.now().year
     )

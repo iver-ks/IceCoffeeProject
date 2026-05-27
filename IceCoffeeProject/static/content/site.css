@@ -546,3 +546,225 @@ footer {
 }
 
 
+/* === Articles page === */
+/* Общий отступ секции страницы со статьями */
+.articles-page {
+    padding: 22px 0 18px;
+}
+
+/* Центральный контейнер страницы*/
+.articles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Главный заголовок страницы */
+.articles-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #E6D5B8;
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+}
+
+/* Подзаголовок под главным названием */
+.articles-subtitle {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(201, 184, 160, 0.9);
+    margin: 0 0 28px;
+}
+
+/* Основная сетка страницы:
+   слева список статей, справа форма */
+.articles-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* Вертикальный список карточек */
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Карточка одной статьи */
+.article-card {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
+    border-radius: 20px;
+    padding: 18px;
+    min-height: 140px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    overflow: hidden;
+}
+
+    /* Эффект наведения на карточку */
+    .article-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
+    }
+
+/* Изображение статьи */
+.article-image {
+    width: 140px;
+    min-width: 140px;
+    height: 96px;
+    border-radius: 10px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(35, 24, 21, 0.22);
+    padding: 4px;
+}
+
+/* Текстовая часть карточки */
+.article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+    min-width: 0;
+}
+
+/* Название статьи */
+.article-name {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Краткое описание статьи */
+.article-description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #C9B8A0;
+}
+
+/* Дата и автор */
+.article-meta {
+    margin: 4px 0 0;
+    color: rgba(230, 213, 184, 0.9);
+    font-size: 15px;
+}
+
+/* Разделитель между датой и автором */
+.article-separator {
+    opacity: 0.55;
+    margin: 0 12px;
+}
+
+/* Форма добавления статьи */
+.article-form {
+    background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    width: 100%;
+    max-width: 390px;
+    /* Прижимает форму к правому краю своей grid-колонки */
+    justify-self: end;
+}
+
+/* Заголовок формы */
+.article-form-title {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Подписи к полям формы */
+.article-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Общие стили для input и textarea */
+.article-form input,
+.article-form textarea {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(35, 24, 21, 0.55);
+    border: 1px solid rgba(201, 184, 160, 0.25);
+    border-radius: 12px;
+    padding: 11px 14px;
+    color: #E6D5B8;
+    font-size: 15px;
+    min-height: 46px;
+    margin-bottom: 18px;
+    outline: none;
+}
+
+/* Поле краткого описания */
+.article-form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+    /* Отдельный стиль для большого поля основного текста статьи */
+    .article-form textarea#article-content {
+        min-height: 200px;
+        height: 200px;
+    }
+
+    /* Подсветка активного поля */
+    .article-form input:focus,
+    .article-form textarea:focus {
+        border-color: #8FA396;
+        box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
+    }
+
+/* Кнопка отправки формы */
+.article-submit {
+    width: auto;
+    display: block;
+    margin: 4px auto 0;
+    border: none;
+    background-color: #8FA396;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 11px 24px;
+    transition: all 0.3s ease;
+}
+
+    /* Наведение на кнопку */
+    .article-submit:hover {
+        background-color: #7a8f80;
+    }
+
+/* Текст про обязательные поля */
+.article-required-note {
+    margin: 14px 0 0;
+    font-size: 14px;
+    color: rgba(201, 184, 160, 0.85);
+}
+
+/* Активный пункт навигации */
+.nav-active {
+    color: #8FA396 !important;
+}
+
+/* Если активным оказался пункт-кнопка Контакты */
+.btn-contact.nav-active {
+    color: #fff !important;
+}
+
+
