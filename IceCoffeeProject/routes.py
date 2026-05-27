@@ -49,7 +49,7 @@ def about():
 @view("reviews")
 def reviews():
     """Renders the reviews page."""
-    sort_order = request.query.get("sort_order", "new")
+    sort_order = request.query.get("sort", "new")
     reviews_data = sort_reviews(load_reviews(), sort_order)
 
     return dict(
