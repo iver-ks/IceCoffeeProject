@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='Отзывы', year=year)
+% rebase("layout.tpl", title="Отзывы", year=year)
 
 <!-- Секция отзывов -->
 <section class="reviews-section">
@@ -53,7 +53,7 @@
     <!-- Сортировка и список карточек -->
     <div class="reviews-list-block">
         <div class="reviews-sort">
-            <label class="reviews-sort-label" for="sort_order">Отзывы</label>
+            <label class="reviews-sort-label" for="sort_order">Сортировка отзывов</label>
             <div class="reviews-sort-controls">
                 <select id="sort_order" name="sort_order" class="reviews-sort-select">
                     <option value="new">Сначала новые</option>
@@ -63,9 +63,10 @@
             </div>
         </div>
 
-        <div class="reviews-grid">
-            % for item in reviews:
-            <article class="review-card">
+        % if reviews:
+        <div class="reviews-grid" id="reviews-grid">
+            % for index, item in enumerate(reviews):
+            <article class="review-card{{ ' review-card--hidden' if index >= 4 else '' }}">
                 <div class="review-stars">{{ '★' * item['rating'] }}{{ '☆' * (5 - item['rating']) }}</div>
                 <p class="review-meta"><strong>Автор:</strong> {{ item['author'] }}</p>
                 <p class="review-meta"><strong>Дата:</strong> {{ item['date'] }}</p>
@@ -73,9 +74,46 @@
             </article>
             % end
         </div>
-
-        <div class="reviews-more-placeholder">
-            <button type="button" class="btn btn-review-more" disabled>Показать ещё</button>
+        % else:
+        <div class="reviews-empty-wrap">
+            <p class="reviews-empty">
+                Пока отзывов нет. Станьте первым гостем, который поделится впечатлением о нашей кофейне.
+            </p>
         </div>
+        % end
+
+        % if reviews and len(reviews) > 4:
+        <div class="reviews-more-placeholder">
+            <button type="button" class="btn btn-review-more" id="show-more-reviews">Показать ещё</button>
+        </div>
+        % end
     </div>
 </section>
+
+% if reviews and len(reviews) > 4:
+<script>
+    (function () {
+        var button = document.getElementById('show-more-reviews');
+        var hiddenSelector = '.review-card--hidden';
+        var loadCount = 4;
+
+        if (!button) {
+            return;
+        }
+
+        button.addEventListener('click', function () {
+            var hiddenCards = document.querySelectorAll(hiddenSelector);
+            var revealed = 0;
+
+            for (var i = 0; i < hiddenCards.length && revealed < loadCount; i++) {
+                hiddenCards[i].classList.remove('review-card--hidden');
+                revealed++;
+            }
+
+            if (document.querySelectorAll(hiddenSelector).length === 0) {
+                button.parentElement.style.display = 'none';
+            }
+        });
+    })();
+</script>
+% end
