@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - ICE Coffee</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />

@@ -2,9 +2,10 @@
 Routes and views for the bottle application.
 """
 
-from bottle import request, route, view
+from bottle import redirect, request, route, view
 from datetime import datetime
 
+from articles_model import add_article, load_articles, validate_article_form
 from reviews_model import load_reviews, sort_reviews
 
 
@@ -64,12 +65,34 @@ def reviews():
 @view("articles")
 def articles():
     """Renders the articles page."""
+    empty_values = {
+        "author": "",
+        "title": "",
+        "description": "",
+        "content": "",
+        "date": "",
+    }
+
     if request.method == "POST":
-        # Backend logic will be connected later.
-        pass
+        errors, values = validate_article_form(request.forms)
+        if errors:
+            return dict(
+                title="Статьи",
+                nav_page="articles",
+                year=datetime.now().year,
+                articles=load_articles(),
+                errors=errors,
+                values=values,
+            )
+
+        add_article(values)
+        return redirect("/articles")
 
     return dict(
         title="Статьи",
         nav_page="articles",
         year=datetime.now().year,
+        articles=load_articles(),
+        errors={},
+        values=empty_values,
     )
