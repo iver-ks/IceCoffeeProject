@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,6 +25,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/" class="{{'nav-active' if nav_page == 'home' else ''}}">Главная</a></li>
                     <li><a href="/about" class="{{'nav-active' if nav_page == 'about' else ''}}">О нас</a></li>
+                    <li><a href="/reviews" class="{{'nav-active' if nav_page == 'reviews' else ''}}">Отзывы</a></li>
                     <li><a href="/articles" class="{{'nav-active' if nav_page == 'articles' else ''}}">Статьи</a></li>
                     <li><a href="/contact" class="btn-contact {{'nav-active' if nav_page == 'contact' else ''}}">Контакты</a></li>
                 </ul>
