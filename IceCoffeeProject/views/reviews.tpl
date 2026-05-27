@@ -51,17 +51,25 @@
     </div>
 
     <!-- Сортировка и список карточек -->
-    <div class="reviews-list-block">
-        <div class="reviews-sort">
-            <label class="reviews-sort-label" for="sort_order">Сортировка отзывов</label>
+    <div class="reviews-list-block" id="reviews-list">
+        <form class="reviews-sort" action="/reviews#reviews-list" method="get">
+            <label class="reviews-sort-label" for="sort">Сортировка отзывов</label>
             <div class="reviews-sort-controls">
-                <select id="sort_order" name="sort_order" class="reviews-sort-select">
+                <select id="sort" name="sort" class="reviews-sort-select">
+                    % if sort_order == "new":
+                    <option value="new" selected="selected">Сначала новые</option>
+                    % else:
                     <option value="new">Сначала новые</option>
+                    % end
+                    % if sort_order == "old":
+                    <option value="old" selected="selected">Сначала старые</option>
+                    % else:
                     <option value="old">Сначала старые</option>
+                    % end
                 </select>
-                <button type="button" class="btn btn-review-sort">Применить</button>
+                <button type="submit" class="btn btn-review-sort">Применить</button>
             </div>
-        </div>
+        </form>
 
         % if reviews:
         <div class="reviews-grid" id="reviews-grid">
@@ -90,30 +98,4 @@
     </div>
 </section>
 
-% if reviews and len(reviews) > 4:
-<script>
-    (function () {
-        var button = document.getElementById('show-more-reviews');
-        var hiddenSelector = '.review-card--hidden';
-        var loadCount = 4;
-
-        if (!button) {
-            return;
-        }
-
-        button.addEventListener('click', function () {
-            var hiddenCards = document.querySelectorAll(hiddenSelector);
-            var revealed = 0;
-
-            for (var i = 0; i < hiddenCards.length && revealed < loadCount; i++) {
-                hiddenCards[i].classList.remove('review-card--hidden');
-                revealed++;
-            }
-
-            if (document.querySelectorAll(hiddenSelector).length === 0) {
-                button.parentElement.style.display = 'none';
-            }
-        });
-    })();
-</script>
-% end
+<script src="/static/scripts/reviews.js"></script>
