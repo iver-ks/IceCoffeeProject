@@ -1,4 +1,4 @@
-
+"""Model helpers for reading, validating, and storing articles."""
 
 import json
 import os
@@ -8,6 +8,7 @@ from datetime import date, datetime
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARTICLES_PATH = os.path.join(BASE_DIR, "data", "articles.json")
 DEFAULT_ARTICLE_IMAGE = "/static/images/coffee-cup-about.png"
+AUTHOR_PATTERN = r"[A-Za-zА-Яа-яЁё]+(?:[ -][A-Za-zА-Яа-яЁё]+)*"
 
 
 def load_articles():
@@ -34,7 +35,7 @@ def save_articles(articles):
 
 
 def validate_article_form(form):
-    """Validate form payload and return (errors, values)."""
+    """Validate article form payload and return errors with cleaned values."""
     values = {
         "author": _safe_text(form, "author"),
         "title": _safe_text(form, "title"),
@@ -64,7 +65,7 @@ def validate_article_form(form):
 
 
 def add_article(article):
-    """Append article, sort by date desc, and persist JSON."""
+    """Append article, sort by date descending, and persist JSON."""
     articles = load_articles()
     articles.append(
         {
@@ -104,7 +105,7 @@ def _validate_author(values, errors):
         return
 
     author = values.get("author", "")
-    if not re.fullmatch(r"[A-Za-zА-Яа-яЁё]+(?:[ -][A-Za-zА-Яа-яЁё]+)*", author):
+    if not re.fullmatch(AUTHOR_PATTERN, author):
         errors["author"] = "Имя автора содержит недопустимые символы"
 
 
