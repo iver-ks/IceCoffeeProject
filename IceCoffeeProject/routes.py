@@ -33,14 +33,14 @@ def normalize_text(value):
 
 
 def normalize_review_date(value):
-    """Convert review date input to ISO format for storage and comparison."""
+    """Convert review date input to DD.MM.YYYY format for storage and comparison."""
     normalized = normalize_text(value).strip()
     if not normalized:
         return ""
 
     for fmt in ("%d.%m.%Y", "%Y-%m-%d"):
         try:
-            return datetime.strptime(normalized, fmt).strftime("%Y-%m-%d")
+            return datetime.strptime(normalized, fmt).strftime("%d.%m.%Y")
         except ValueError:
             continue
 
@@ -106,9 +106,12 @@ def about():
 @route("/reviews", method="GET")
 @view("reviews")
 def reviews():
-    """Renders the reviews page."""
+    """Отображает страницу отзывов."""
+    # Получаем порядок сортировки
     sort_order = request.query.get("sort", "new")
+    # Формируем данные для передачи в шаблон
     context = reviews_context(sort_order=sort_order)
+    # Если отзыв был успешно сохранён, добавляем сообщение об успехе
     if request.query.get("saved") == "1":
         context["success_message"] = "Отзыв успешно опубликован."
     return context
@@ -117,23 +120,28 @@ def reviews():
 @route("/reviews", method="POST")
 @view("reviews")
 def reviews_post():
-    """Handles review submission."""
+    """Обрабатывает отправку формы отзыва."""
+    # Получаем текущий порядок сортировки
     sort_order = request.query.get("sort", "new")
+    # Загружаем уже существующие отзывы
     existing_reviews = load_reviews()
+    # Получаем и очищаем данные из формы
     form_data = {
         "rating": normalize_text(request.forms.get("rating", "")).strip(),
         "author": normalize_text(request.forms.get("author", "")).strip(),
         "date": normalize_text(request.forms.get("date", "")).strip(),
         "text": normalize_text(request.forms.get("text", "")).strip(),
     }
+     # Приводим дату к нужному формату
     normalized_date = normalize_review_date(form_data["date"])
-
+    # Словарь для хранения ошибок формы
     errors = {}
+
+    # Проверка рейтинга
     if not form_data["rating"]:
         errors["rating"] = "Выберите рейтинг."
-    elif form_data["rating"] not in {"1", "2", "3", "4", "5"}:
-        errors["rating"] = "Выберите корректный рейтинг."
 
+    # Проверка имени, даты, текста и дубликатов
     errors.update(
         validate_review(
             form_data["author"],
@@ -143,17 +151,22 @@ def reviews_post():
         )
     )
 
+    # Если есть ошибки, возвращаем страницу с введёнными данными
     if errors:
         return reviews_context(sort_order=sort_order, form_data=form_data, errors=errors)
 
+    # Формируем новый отзыв
     new_review = {
         "rating": int(form_data["rating"]),
         "author": form_data["author"],
         "date": normalized_date,
         "text": form_data["text"],
     }
+
+    # Сохраняем новый отзыв в начало списка
     save_reviews([new_review] + existing_reviews)
 
+    # Возвращаем страницу с очищенной формой и сообщением об успехе
     return reviews_context(
         sort_order=sort_order,
         form_data={"rating": "", "author": "", "date": "", "text": ""},

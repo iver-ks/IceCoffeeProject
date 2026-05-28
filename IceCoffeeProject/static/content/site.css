@@ -1,4 +1,4 @@
-﻿/* === Р С›Р В±РЎвЂ°Р С‘Р Вµ РЎРѓРЎвЂљР С‘Р В»Р С‘ РЎРѓРЎвЂљРЎР‚Р В°Р Р…Р С‘РЎвЂ РЎвЂ№ === */
+﻿/* Общие стили страницы */
 
 html {
     scroll-behavior: smooth; /* плавная прокрутка */
@@ -13,24 +13,26 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-body.modal-open {
-    overflow: hidden;
-}
+    body.modal-open {
+        overflow: hidden;
+    }
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р С•Р Р…РЎвЂљР ВµР Р…РЎвЂљР В° */
+/* Основной контейнер */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Р С›Р С–РЎР‚Р В°Р Р…Р С‘РЎвЂЎР ВµР Р…Р С‘Р Вµ РЎв‚¬Р С‘РЎР‚Р С‘Р Р…РЎвЂ№ РЎРЊР В»Р ВµР СР ВµР Р…РЎвЂљР С•Р Р† РЎвЂћР С•РЎР‚Р СРЎвЂ№ */
+/* Ограничение ширины полей формы */
+
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-/* === Р РЋРЎвЂљР С‘Р В»Р С‘ Р Р†Р В°Р В»Р С‘Р Т‘Р В°РЎвЂ Р С‘Р С‘ РЎвЂћР С•РЎР‚Р С === */
+/* Стили ошибок валидации */
 
 .field-validation-error {
     color: #b94a48;
@@ -56,15 +58,15 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-/* === Р СњР В°Р Р†Р С‘Р С–Р В°РЎвЂ Р С‘Р С•Р Р…Р Р…Р В°РЎРЏ Р С—Р В°Р Р…Р ВµР В»РЎРЉ === */
+/* Навигационная панель */
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– РЎвЂ Р Р†Р ВµРЎвЂљ navbar */
 .navbar-inverse {
     background-color: #231815 !important;
     border: none;
 }
 
-/* Р вЂєР С•Р С–Р С•РЎвЂљР С‘Р С— / Р Р…Р В°Р В·Р Р†Р В°Р Р…Р С‘Р Вµ Р В±РЎР‚Р ВµР Р…Р Т‘Р В° */
+/* Логотип сайта */
+
 .navbar-brand {
     color: #fff !important;
     font-weight: 700;
@@ -72,63 +74,61 @@ input[type="checkbox"].input-validation-error {
     letter-spacing: 2px;
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р С—РЎР‚Р С‘ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘Р С‘ Р Р…Р В° Р В»Р С•Р С–Р С•РЎвЂљР С‘Р С— */
     .navbar-brand:hover {
         color: #8FA396 !important;
     }
 
-/* Р РЋРЎРѓРЎвЂ№Р В»Р С”Р С‘ Р Р…Р В°Р Р†Р С‘Р С–Р В°РЎвЂ Р С‘Р С•Р Р…Р Р…Р С•Р С–Р С• Р СР ВµР Р…РЎР‹ */
+/* Пункты меню */
+
 .navbar-nav > li > a {
     color: #E6D5B8 !important;
     font-weight: 400;
     font-size: 14px;
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘РЎРЏ Р Р…Р В° Р С—РЎС“Р Р…Р С”РЎвЂљ Р СР ВµР Р…РЎР‹ */
     .navbar-nav > li > a:hover {
         color: #8FA396 !important;
         background-color: transparent !important;
     }
 
-/* Р С™Р Р…Р С•Р С—Р С”Р В° "Р С™Р С•Р Р…РЎвЂљР В°Р С”РЎвЂљРЎвЂ№" Р Р† Р Р…Р В°Р Р†Р С‘Р С–Р В°РЎвЂ Р С‘Р С‘ */
+/* Кнопка контактов */
+
 .btn-contact {
     background-color: #8FA396 !important;
     border-radius: 20px;
     padding: 10px 25px !important;
     margin-top: 8px;
-    transition: all 0.3s ease; /* Р С—Р В»Р В°Р Р†Р Р…Р В°РЎРЏ Р В°Р Р…Р С‘Р СР В°РЎвЂ Р С‘РЎРЏ */
+    transition: all 0.3s ease; /* плавная анимация */
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘РЎРЏ Р Р…Р В° Р С”Р Р…Р С•Р С—Р С”РЎС“ */
+    /* Эффект наведения на кнопку */
     .btn-contact:hover {
         background-color: #7a8f80 !important;
     }
 
-/* === Р вЂњР В»Р В°Р Р†Р Р…Р В°РЎРЏ РЎРѓРЎвЂљРЎР‚Р В°Р Р…Р С‘РЎвЂ Р В° === */
+/* Главная страница */
 
-/* === Hero-РЎРѓР ВµР С”РЎвЂ Р С‘РЎРЏ (Р С—Р ВµРЎР‚Р Р†РЎвЂ№Р в„– РЎРЊР С”РЎР‚Р В°Р Р…) === */
-
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
+/* Первый экран */
 .hero-section {
     padding: 100px 0 60px;
     min-height: 600px;
 }
 
-/* Flex-Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р Т‘Р В»РЎРЏ Р Р†РЎвЂ№РЎР‚Р В°Р Р†Р Р…Р С‘Р Р†Р В°Р Р…Р С‘РЎРЏ РЎвЂљР ВµР С”РЎРѓРЎвЂљР В° Р С‘ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ */
+/* Контейнер первого экрана */
 .hero-content {
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-/* Р СћР ВµР С”РЎРѓРЎвЂљР С•Р Р†РЎвЂ№Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ */
+/* Текстовый блок */
 .hero-text {
     width: 55%;
     padding-right: 20px;
-    z-index: 2; /* Р С—Р С•Р Р†Р ВµРЎР‚РЎвЂ¦ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ Р С—РЎР‚Р С‘ Р Р…Р В°Р В»Р С•Р В¶Р ВµР Р…Р С‘Р С‘ */
+    z-index: 2; /* поверх изображения */
 }
 
-/* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” (Р С•РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– РЎРѓР В»Р С•Р С–Р В°Р Р…) */
+/* Главный заголовок */
 .hero-title {
     font-size: 42px;
     font-weight: 700;
@@ -137,7 +137,7 @@ input[type="checkbox"].input-validation-error {
     margin: 0 0 25px 0;
 }
 
-/* Р С›Р С—Р С‘РЎРѓР В°Р Р…Р С‘Р Вµ Р С—Р С•Р Т‘ Р В·Р В°Р С–Р С•Р В»Р С•Р Р†Р С”Р С•Р С */
+/* Описание под заголовком */
 .hero-description {
     font-size: 16px;
     line-height: 1.7;
@@ -145,7 +145,7 @@ input[type="checkbox"].input-validation-error {
     margin-bottom: 35px;
 }
 
-/* Р С™Р Р…Р С•Р С—Р С”Р В° Р С—Р ВµРЎР‚Р ВµРЎвЂ¦Р С•Р Т‘Р В° Р С” Р Р†РЎвЂ№Р В±Р С•РЎР‚РЎС“ Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂ Р С‘Р С‘ */
+/* Кнопка первого экрана */
 .btn-hero {
     background-color: #8FA396;
     color: #fff;
@@ -157,30 +157,30 @@ input[type="checkbox"].input-validation-error {
     transition: all 0.3s ease;
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘РЎРЏ Р Р…Р В° Р С”Р Р…Р С•Р С—Р С”РЎС“ */
+    /* Наведение на кнопку */
     .btn-hero:hover {
         background-color: #7a8f80;
         color: #fff;
-        transform: translateY(-2px); /* Р В»РЎвЂР С–Р С”Р С•Р Вµ "Р С—Р С•Р Т‘Р Р…РЎРЏРЎвЂљР С‘Р Вµ" Р С”Р Р…Р С•Р С—Р С”Р С‘ */
+        transform: translateY(-2px); /* лёгкий подъём */
     }
 
-/* Р вЂР В»Р С•Р С” РЎРѓ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘Р ВµР С */
+/* Блок изображения */
 .hero-image {
     width: 45%;
     text-align: right;
-    position: sticky; /* РЎвЂћР С‘Р С”РЎРѓР В°РЎвЂ Р С‘РЎРЏ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ Р С—РЎР‚Р С‘ Р С—РЎР‚Р С•Р С”РЎР‚РЎС“РЎвЂљР С”Р Вµ */
+    position: sticky;
     right: 0;
     top: 120px;
     z-index: 1;
 }
 
-/* Р ВР В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘Р Вµ Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂљР В° */
-.hero-image img {
-    max-width: 90%;
-    animation: float 3s ease-in-out infinite;
-}
+    /* Изображение продукта */
+    .hero-image img {
+        max-width: 90%;
+        animation: float 3s ease-in-out infinite;
+    }
 
-/* Р С’Р Р…Р С‘Р СР В°РЎвЂ Р С‘РЎРЏ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ */
+/* Анимация изображения */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -191,14 +191,13 @@ input[type="checkbox"].input-validation-error {
     }
 }
 
-/* === Р РЋР ВµР С”РЎвЂ Р С‘РЎРЏ Р СР ВµР Р…РЎР‹ === */
+/* Секция меню */
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
 .products-section {
     padding: 40px 0 80px;
 }
 
-/* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
+/* Заголовок секции */
 .products-title {
     text-align: center;
     font-size: 48px;
@@ -208,14 +207,14 @@ input[type="checkbox"].input-validation-error {
     letter-spacing: 3px;
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р В°РЎР‚РЎвЂљР С•РЎвЂЎР ВµР С” */
+/* Сетка карточек */
 .products-grid {
     display: flex;
     justify-content: center;
     gap: 25px;
 }
 
-/* Р С™Р В°РЎР‚РЎвЂљР С•РЎвЂЎР С”Р В° Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂљР В° */
+/* Карточка продукта */
 .product-card {
     background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
     border-radius: 20px;
@@ -225,13 +224,13 @@ input[type="checkbox"].input-validation-error {
     transition: all 0.3s ease;
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘РЎРЏ Р Р…Р В° Р С”Р В°РЎР‚РЎвЂљР С•РЎвЂЎР С”РЎС“ */
+    /* Наведение на карточку */
     .product-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
 
-/* Р ВР В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘Р Вµ Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂљР В° */
+/* Блок изображения */
 .product-image {
     height: 180px;
     display: flex;
@@ -240,13 +239,13 @@ input[type="checkbox"].input-validation-error {
     margin-bottom: 20px;
 }
 
-    /* Р С›Р С–РЎР‚Р В°Р Р…Р С‘РЎвЂЎР ВµР Р…Р С‘Р Вµ РЎР‚Р В°Р В·Р СР ВµРЎР‚Р С•Р Р† Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ */
+    /* Изображение продукта */
     .product-image img {
         max-width: 100%;
         max-height: 100%;
     }
 
-/* Р СњР В°Р В·Р Р†Р В°Р Р…Р С‘Р Вµ Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂљР В° */
+/* Название продукта */
 .product-name {
     font-size: 22px;
     font-weight: 700;
@@ -254,7 +253,7 @@ input[type="checkbox"].input-validation-error {
     margin: 0 0 8px 0;
 }
 
-/* Р РЋРЎвЂљР С•Р С‘Р СР С•РЎРѓРЎвЂљРЎРЉ Р С—РЎР‚Р С•Р Т‘РЎС“Р С”РЎвЂљР В° */
+/* Цена продукта */
 .product-price {
     font-size: 26px;
     font-weight: 700;
@@ -262,7 +261,7 @@ input[type="checkbox"].input-validation-error {
     margin: 0 0 18px 0;
 }
 
-/* Р С™Р Р…Р С•Р С—Р С”Р В° Р С—Р С•Р Т‘РЎР‚Р С•Р В±Р Р…Р С•РЎРѓРЎвЂљР ВµР в„– */
+/* Кнопка подробностей */
 .btn-details-full {
     background-color: #8FA396;
     color: #fff;
@@ -276,23 +275,22 @@ input[type="checkbox"].input-validation-error {
     border: none;
 }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘РЎРЏ Р Р…Р В° Р С”Р Р…Р С•Р С—Р С”РЎС“ */
+    /* Наведение на кнопку */
     .btn-details-full:hover {
         background-color: #7a8f80;
         color: #fff;
         transform: translateY(-2px);
     }
 
-/* === Р РЋРЎвЂљРЎР‚Р В°Р Р…Р С‘РЎвЂ Р В° About - Р С› Р Р…Р В°РЎРѓ === */
+/* Страница About */
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
 .about-section {
     padding: 40px 0 80px;
     background-color: #231815;
     min-height: 800px;
 }
 
-/* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
+/* Заголовок страницы */
 .about-title {
     text-align: center;
     font-size: 48px;
@@ -302,7 +300,7 @@ input[type="checkbox"].input-validation-error {
     letter-spacing: 3px;
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р С•Р Р…РЎвЂљР ВµР Р…РЎвЂљР В° (Р Т‘Р Р†Р Вµ Р С”Р С•Р В»Р С•Р Р…Р С”Р С‘ + Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘Р Вµ) */
+/* Контейнер блока "О нас" */
 .about-content {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -312,19 +310,19 @@ input[type="checkbox"].input-validation-error {
     margin: 0 auto;
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р С•Р В»Р С•Р Р…Р С”Р С‘*/
+/* Колонка с текстом */
 .about-column {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С—РЎР‚Р ВµР С‘Р СРЎС“РЎвЂ°Р ВµРЎРѓРЎвЂљР Р†Р В° */
+/* Блок преимущества */
 .about-block {
     position: relative;
 }
 
-/* Р В¤Р С•Р Р…Р С•Р Р†РЎвЂ№Р в„– Р Р…Р С•Р СР ВµРЎР‚ */
+/* Фоновый номер */
 .block-number {
     position: absolute;
     top: -40px;
@@ -335,7 +333,7 @@ input[type="checkbox"].input-validation-error {
     line-height: 1;
 }
 
-/* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” Р С—РЎР‚Р ВµР С‘Р СРЎС“РЎвЂ°Р ВµРЎРѓРЎвЂљР Р†Р В° */
+/* Заголовок преимущества */
 .about-block-title {
     font-size: 24px;
     font-weight: 700;
@@ -344,7 +342,7 @@ input[type="checkbox"].input-validation-error {
     line-height: 1.3;
 }
 
-/* Р С›Р С—Р С‘РЎРѓР В°Р Р…Р С‘Р Вµ Р С—РЎР‚Р ВµР С‘Р СРЎС“РЎвЂ°Р ВµРЎРѓРЎвЂљР Р†Р В° */
+/* Описание преимущества */
 .about-block-text {
     font-size: 15px;
     line-height: 1.8;
@@ -353,8 +351,7 @@ input[type="checkbox"].input-validation-error {
     padding-left: 40px;
 }
 
-
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С‘Р В·Р С•Р В±РЎР‚Р В°Р В¶Р ВµР Р…Р С‘РЎРЏ */
+/* Центральное изображение */
 .about-center {
     width: 300px;
     height: 400px;
@@ -363,21 +360,21 @@ input[type="checkbox"].input-validation-error {
     justify-content: center;
 }
 
-/* === Р СџР С•Р Т‘Р Р†Р В°Р В» РЎРѓР В°Р в„–РЎвЂљР В° === */
+/* Подвал сайта */
 footer {
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
     border-top: 1px solid #3a2f2a;
 }
-/* === Р РЋРЎвЂљРЎР‚Р В°Р Р…Р С‘РЎвЂ Р В° Contacts - Р С™Р С•Р Р…РЎвЂљР В°Р С”РЎвЂљРЎвЂ№ === */
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓР ВµР С”РЎвЂ Р С‘Р С‘ */
+/* Страница контактов */
+
 .contact-section {
     padding: 40px 0 60px;
 }
 
-/* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” */
+/* Заголовок контактов */
 .contact-title {
     text-align: center;
     font-size: 56px;
@@ -387,7 +384,7 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Р СџР С•Р Т‘Р В·Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” */
+/* Подзаголовок контактов */
 .contact-subtitle {
     text-align: center;
     margin-bottom: 60px;
@@ -398,7 +395,7 @@ footer {
         color: rgba(201, 184, 160, 0.8);
     }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р Т‘Р В»РЎРЏ Р С”Р В°РЎР‚РЎвЂљР С•РЎвЂЎР ВµР С” */
+/* Карточки контактов */
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -409,7 +406,7 @@ footer {
     margin-right: auto;
 }
 
-/* Р С™Р В°РЎР‚РЎвЂљР С•РЎвЂЎР С”Р В° */
+/* Карточка контакта */
 .contact-card {
     background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
     border-radius: 20px;
@@ -418,7 +415,8 @@ footer {
     transition: all 0.3s ease;
     position: relative;
 }
-    /* Р вЂќР ВµР С”Р С•РЎР‚Р В°РЎвЂљР С‘Р Р†Р Р…Р В°РЎРЏ Р В»Р С‘Р Р…Р С‘РЎРЏ */
+
+    /* Декоративная линия */
     .contact-card::before {
         content: '';
         position: absolute;
@@ -427,28 +425,29 @@ footer {
         right: 0;
         height: 4px;
         background: linear-gradient(90deg, #8FA396, #a3b8a8);
-        transform: scaleX(0); /* РЎРѓР С”РЎР‚РЎвЂ№РЎвЂљР В° Р С—Р С• РЎС“Р СР С•Р В»РЎвЂЎР В°Р Р…Р С‘РЎР‹ */
+        transform: scaleX(0); /* скрыта по умолчанию */
         transition: transform 0.3s ease;
     }
 
-    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р С”Р В°РЎР‚РЎвЂљР С•РЎвЂЎР С”Р С‘ */
+    /* Наведение на карточку */
     .contact-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
-        /* Р С’Р Р…Р С‘Р СР В°РЎвЂ Р С‘РЎРЏ Р В»Р С‘Р Р…Р С‘Р С‘ Р С—РЎР‚Р С‘ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘Р С‘ */
+
+        /* Появление линии при наведении */
         .contact-card:hover::before {
             transform: scaleX(1);
         }
 
-/* Р ВР С”Р С•Р Р…Р С”Р В° Р С”Р В°РЎР‚РЎвЂљР С•РЎвЂЎР С”Р С‘ */
+/* Иконка карточки */
 .contact-icon-img {
     width: 60px;
     height: 60px;
     margin-bottom: 15px;
 }
 
-/* Р С›РЎРѓР Р…Р С•Р Р†Р Р…Р С•Р в„– РЎвЂљР ВµР С”РЎРѓРЎвЂљ (Р В·Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С”) */
+/* Заголовок карточки */
 .contact-card-title {
     font-size: 22px;
     font-weight: 700;
@@ -456,28 +455,29 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Р вЂќР С•Р С—Р С•Р В»Р Р…Р С‘РЎвЂљР ВµР В»РЎРЉР Р…РЎвЂ№Р в„– РЎвЂљР ВµР С”РЎРѓРЎвЂљ */
+/* Текст карточки */
 .contact-card-text {
     font-size: 14px;
     line-height: 1.6;
     color: rgba(201, 184, 160, 0.9);
     margin: 0;
 }
-/* Р С›Р В±РЎвЂ°Р С‘Р в„– Р С”Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р В°РЎР‚РЎвЂљРЎвЂ№ */
+
+/* Блок карты */
 .contact-map {
     position: relative;
     border-radius: 20px;
-    overflow: hidden; /* Р С•Р В±РЎР‚Р ВµР В·Р В°Р ВµРЎвЂљ Р С”РЎР‚Р В°РЎРЏ Р С”Р В°РЎР‚РЎвЂљРЎвЂ№ */
+    overflow: hidden; /* обрезает края карты */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ Р С”Р В°РЎР‚РЎвЂљРЎвЂ№ */
+/* Контейнер карты */
 .map-container {
     width: 100%;
     height: 450px;
 }
 
-    /* Р С™Р В°РЎР‚РЎвЂљР В° */
+    /* Встроенная карта */
     .map-container iframe {
         width: 100%;
         height: 100%;
@@ -485,7 +485,7 @@ footer {
         filter: grayscale(20%) sepia(10%);
     }
 
-/* Р ВР Р…РЎвЂћР С•-Р В±Р В»Р С•Р С” Р С—Р С•Р Р†Р ВµРЎР‚РЎвЂ¦ Р С”Р В°РЎР‚РЎвЂљРЎвЂ№ */
+/* Информационный блок на карте */
 .map-info {
     position: absolute;
     bottom: 20px;
@@ -498,7 +498,7 @@ footer {
     border-left: 4px solid #8FA396;
 }
 
-    /* Р вЂ”Р В°Р С–Р С•Р В»Р С•Р Р†Р С•Р С” Р В±Р В»Р С•Р С”Р В° (Р Р…Р В°Р В·Р Р†Р В°Р Р…Р С‘Р Вµ РЎвЂљР С•РЎвЂЎР С”Р С‘) */
+    /* Заголовок информационного блока */
     .map-info h4 {
         font-size: 20px;
         font-weight: 700;
@@ -506,14 +506,14 @@ footer {
         margin: 0 0 15px 0;
     }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓРЎвЂљРЎР‚Р С•Р С”Р С‘ Р С‘Р Р…РЎвЂћР С•РЎР‚Р СР В°РЎвЂ Р С‘Р С‘ */
+/* Строка информации */
 .info-row {
     display: flex;
     align-items: center;
     gap: 7px;
 }
 
-    /* Р СћР ВµР С”РЎРѓРЎвЂљ Р Р† РЎРѓРЎвЂљРЎР‚Р С•Р С”Р Вµ */
+    /* Текст строки */
     .info-row p {
         font-size: 14px;
         color: rgba(201, 184, 160, 0.9);
@@ -521,7 +521,7 @@ footer {
         line-height: 1.5;
     }
 
-/* Р ВР С”Р С•Р Р…Р С”Р С‘ */
+/* Иконка */
 .info-icon {
     width: 20px;
     height: 20px;
@@ -529,7 +529,7 @@ footer {
     flex-shrink: 0;
 }
 
-/* Р С™Р С•Р Р…РЎвЂљР ВµР в„–Р Р…Р ВµРЎР‚ РЎРѓРЎвЂљРЎР‚Р С•Р С”Р С‘ РЎР‚Р ВµР в„–РЎвЂљР С‘Р Р…Р С–Р В° */
+/* Строка рейтинга */
 .map-rating {
     margin-top: 3px;
     display: flex;
@@ -537,22 +537,27 @@ footer {
     gap: 10px;
 }
 
-/* Р вЂ”Р Р†РЎвЂР В·Р Т‘РЎвЂ№ РЎР‚Р ВµР в„–РЎвЂљР С‘Р Р…Р С–Р В° */
+/* Звёзды рейтинга */
 .stars {
     color: #FFD700;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
-/* Р СћР ВµР С”РЎРѓРЎвЂљ РЎР‚Р ВµР в„–РЎвЂљР С‘Р Р…Р С–Р В° */
+/* Значение рейтинга */
 .rating-value {
     font-size: 14px;
     color: rgba(201, 184, 160, 0.8);
 }
+
+/* === Страница Reviews - Отзывы === */
+
+/* Секция отзывов */
 .reviews-section {
     padding: 40px 0 70px;
 }
 
+/* Макет страницы отзывов */
 .reviews-layout {
     display: grid;
     grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.45fr);
@@ -560,11 +565,13 @@ footer {
     align-items: start;
 }
 
+/* Колонка со списком отзывов */
 .reviews-list-column {
     display: flex;
     flex-direction: column;
 }
 
+/* Заголовок отзывов */
 .reviews-title {
     text-align: center;
     font-size: 56px;
@@ -574,6 +581,7 @@ footer {
     letter-spacing: 2px;
 }
 
+/* Описание страницы */
 .reviews-description {
     max-width: 860px;
     margin: 0 auto 28px;
@@ -583,6 +591,7 @@ footer {
     line-height: 1.7;
 }
 
+/* Блок формы и списка */
 .review-form-block,
 .reviews-list-block {
     background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
@@ -591,11 +600,13 @@ footer {
     margin: 0 auto 30px;
 }
 
+/* Блок формы */
 .review-form-block {
     max-width: 460px;
     width: 100%;
 }
 
+/* Блок списка отзывов */
 .reviews-list-block {
     max-width: 1100px;
     width: 100%;
@@ -603,6 +614,7 @@ footer {
     scroll-margin-top: 40px;
 }
 
+/* Заголовок списка отзывов */
 .reviews-list-header {
     display: flex;
     align-items: center;
@@ -611,6 +623,7 @@ footer {
     margin-bottom: 18px;
 }
 
+/* Название блока отзывов */
 .reviews-list-title {
     margin: 0;
     color: #fff;
@@ -618,6 +631,7 @@ footer {
     font-weight: 700;
 }
 
+/* Заголовок формы */
 .review-form-title {
     margin: 0 0 20px;
     color: #fff;
@@ -626,6 +640,7 @@ footer {
     text-align: center;
 }
 
+/* Сообщение об успешном добавлении */
 .review-success {
     margin: -8px 0 16px;
     padding: 10px 14px;
@@ -638,10 +653,12 @@ footer {
     text-align: center;
 }
 
+/* Группа поля формы */
 .review-form-group {
     margin-bottom: 16px;
 }
 
+/* Подписи полей */
 .review-label,
 .reviews-sort-label {
     display: block;
@@ -651,6 +668,7 @@ footer {
     font-weight: 600;
 }
 
+/* Поля формы и сортировки */
 .review-input,
 .review-textarea,
 .reviews-sort-select {
@@ -663,16 +681,19 @@ footer {
     padding: 12px 14px;
 }
 
+/* Поле текста отзыва */
 .review-textarea {
     resize: none;
     min-height: 120px;
 }
 
-.review-input::placeholder,
-.review-textarea::placeholder {
-    color: rgba(201, 184, 160, 0.65);
-}
+    /* Текст placeholder */
+    .review-input::placeholder,
+    .review-textarea::placeholder {
+        color: rgba(201, 184, 160, 0.65);
+    }
 
+/* Ошибка поля */
 .field-error {
     min-height: 18px;
     margin-top: 6px;
@@ -680,6 +701,7 @@ footer {
     font-size: 12px;
 }
 
+/* Подсказка под полем */
 .review-hint {
     display: block;
     margin-top: 6px;
@@ -688,6 +710,7 @@ footer {
     line-height: 1.4;
 }
 
+/* Выбор рейтинга */
 .rating-select {
     display: flex;
     flex-direction: row-reverse;
@@ -695,12 +718,14 @@ footer {
     gap: 6px;
 }
 
-.rating-select input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
+    /* Скрытие radio-кнопок рейтинга */
+    .rating-select input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
 
+/* Звезда рейтинга */
 .rating-star {
     font-size: 34px;
     line-height: 1;
@@ -709,16 +734,19 @@ footer {
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.rating-star:hover,
-.rating-star:hover ~ .rating-star,
-.rating-select input:checked ~ .rating-star {
-    color: #FFD700;
-}
+    /* Выделение звёзд */
+    .rating-star:hover,
+    .rating-star:hover ~ .rating-star,
+    .rating-select input:checked ~ .rating-star {
+        color: #FFD700;
+    }
 
-.rating-star:active {
-    transform: scale(0.96);
-}
+    /* Нажатие на звезду */
+    .rating-star:active {
+        transform: scale(0.96);
+    }
 
+/* Кнопки отзывов */
 .btn-review-submit,
 .btn-review-sort,
 .btn-review-more {
@@ -731,27 +759,31 @@ footer {
     transition: all 0.3s ease;
 }
 
-.btn-review-submit:hover,
-.btn-review-sort:hover,
-.btn-review-more:hover {
-    background-color: #7a8f80;
-    color: #fff;
-}
+    /* Наведение на кнопки */
+    .btn-review-submit:hover,
+    .btn-review-sort:hover,
+    .btn-review-more:hover {
+        background-color: #7a8f80;
+        color: #fff;
+    }
 
+/* Кнопка показа отзывов */
 .btn-review-more {
     width: auto;
     display: inline-block;
     outline: none;
 }
 
-.btn-review-more:focus,
-.btn-review-more:focus-visible,
-.btn-review-more:active {
-    outline: none;
-    box-shadow: none;
-    color: #fff;
-}
+    /* Состояния кнопки */
+    .btn-review-more:focus,
+    .btn-review-more:focus-visible,
+    .btn-review-more:active {
+        outline: none;
+        box-shadow: none;
+        color: #fff;
+    }
 
+/* Блок сортировки */
 .reviews-sort {
     display: flex;
     align-items: end;
@@ -760,16 +792,19 @@ footer {
     margin-bottom: 24px;
 }
 
+/* Элементы сортировки */
 .reviews-sort-controls {
     display: flex;
     gap: 12px;
     align-items: center;
 }
 
+/* Список сортировки */
 .reviews-sort-select {
     min-width: 220px;
 }
 
+/* Сетка отзывов */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -778,6 +813,7 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Карточка отзыва */
 .review-card {
     background-color: rgba(35, 24, 21, 0.9);
     border: 1px solid #4a3a33;
@@ -785,10 +821,12 @@ footer {
     padding: 18px;
 }
 
+/* Скрытая карточка */
 .review-card--hidden {
     display: none;
 }
 
+/* Звёзды в отзыве */
 .review-stars {
     color: #FFD700;
     font-size: 20px;
@@ -796,23 +834,27 @@ footer {
     margin-bottom: 10px;
 }
 
+/* Данные отзыва */
 .review-meta {
     margin: 0 0 6px;
     color: #E6D5B8;
     font-size: 14px;
 }
 
+/* Текст отзыва */
 .review-text {
     margin: 10px 0 0;
     color: #C9B8A0;
     line-height: 1.6;
 }
 
+/* Блок кнопки "Показать ещё" */
 .reviews-more-placeholder {
     text-align: center;
     padding-top: 5px;
 }
 
+/* Обёртка пустого списка */
 .reviews-empty-wrap {
     min-height: 140px;
     display: flex;
@@ -821,6 +863,7 @@ footer {
     padding: 20px 0 30px;
 }
 
+/* Сообщение об отсутствии отзывов */
 .reviews-empty {
     margin: 0;
     max-width: 760px;
@@ -829,16 +872,153 @@ footer {
     font-size: 16px;
     line-height: 1.7;
 }
-`r`n`r`n.articles-page {
+
+/* Адаптация страницы отзывов */
+@media (max-width: 767px) {
+    .reviews-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-title {
+        font-size: 24px;
+    }
+
+    .review-form-block,
+    .reviews-list-block {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .reviews-sort-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-review-sort,
+    .btn-review-submit {
+        width: 100%;
+    }
+}
+
+/* Блок формы отзыва */
+.review-form-block {
+    max-width: 390px;
+}
+
+/* Заголовок формы */
+.review-form-title {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Подпись поля */
+.review-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Поля формы и сортировки */
+.review-input,
+.review-textarea,
+.reviews-sort-select {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(35, 24, 21, 0.55);
+    border: 1px solid rgba(201, 184, 160, 0.25);
+    border-radius: 12px;
+    padding: 11px 14px;
+    color: #E6D5B8;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Высота полей */
+.review-input,
+.reviews-sort-select {
+    height: 44px;
+}
+
+/* Поле текста отзыва */
+.review-textarea {
+    min-height: 130px;
+    resize: none;
+}
+
+    /* Фокус на полях */
+    .review-input:focus,
+    .review-textarea:focus,
+    .reviews-sort-select:focus {
+        border-color: #8FA396;
+        box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
+    }
+
+/* Кнопка отправки отзыва */
+.btn-review-submit {
+    width: auto;
+    display: block;
+    margin: 4px auto 0;
+    border: none;
+    background-color: #8FA396;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+    /* Наведение на кнопку */
+    .btn-review-submit:hover {
+        background-color: #7a8f80;
+    }
+
+/* Кнопка сортировки */
+.btn-review-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* Мобильная адаптация отзывов */
+@media (max-width: 767px) {
+    .review-form-block {
+        max-width: 100%;
+    }
+
+    .reviews-list-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-review-sort {
+        width: auto;
+        margin: 0 0 18px auto;
+        display: inline-flex;
+    }
+}
+
+/* === Страница Articles - Статьи === */
+
+/* Страница статей */
+.articles-page {
     padding: 22px 0 18px;
 }
 
+/* Контейнер статей */
 .articles-container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
 
+/* Заголовок статей */
 .articles-title {
     text-align: center;
     font-size: 48px;
@@ -848,6 +1028,7 @@ footer {
     letter-spacing: 2px;
 }
 
+/* Подзаголовок статей */
 .articles-subtitle {
     text-align: center;
     font-size: 16px;
@@ -856,6 +1037,7 @@ footer {
     margin: 0 0 28px;
 }
 
+/* Макет страницы статей */
 .articles-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -863,17 +1045,20 @@ footer {
     align-items: start;
 }
 
+/* Колонка списка статей */
 .articles-list-column {
     display: flex;
     flex-direction: column;
 }
 
+/* Панель управления статьями */
 .articles-toolbar {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
 }
 
+/* Кнопка сортировки */
 .articles-sort-btn {
     display: inline-flex;
     align-items: center;
@@ -887,12 +1072,14 @@ footer {
     transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.articles-sort-btn:hover {
-    background: linear-gradient(145deg, #342521, #423430);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-    transform: translateY(-1px);
-}
+    /* Наведение на кнопку */
+    .articles-sort-btn:hover {
+        background: linear-gradient(145deg, #342521, #423430);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+        transform: translateY(-1px);
+    }
 
+/* Иконка сортировки */
 .articles-sort-icon {
     display: inline-flex;
     align-items: center;
@@ -900,27 +1087,31 @@ footer {
     color: #8FA396;
 }
 
-.articles-sort-icon svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
+    /* SVG-иконка */
+    .articles-sort-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
 
+/* Текст кнопки */
 .articles-sort-text {
     font-size: 14px;
     font-weight: 600;
 }
 
+/* Список статей */
 .articles-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
+/* Карточка статьи */
 .article-card {
     display: flex;
     gap: 22px;
@@ -935,11 +1126,13 @@ footer {
     overflow: hidden;
 }
 
-.article-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
-}
+    /* Наведение на карточку */
+    .article-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
+    }
 
+/* Изображение статьи */
 .article-image {
     width: 140px;
     min-width: 140px;
@@ -951,6 +1144,7 @@ footer {
     padding: 4px;
 }
 
+/* Контент статьи */
 .article-content {
     display: flex;
     flex-direction: column;
@@ -958,6 +1152,7 @@ footer {
     min-width: 0;
 }
 
+/* Название статьи */
 .article-name {
     margin: 0;
     font-size: 22px;
@@ -966,6 +1161,7 @@ footer {
     font-weight: 700;
 }
 
+/* Описание статьи */
 .article-description {
     margin: 0;
     font-size: 16px;
@@ -973,17 +1169,20 @@ footer {
     color: #C9B8A0;
 }
 
+/* Данные статьи */
 .article-meta {
     margin: 4px 0 0;
     color: rgba(230, 213, 184, 0.9);
     font-size: 15px;
 }
 
+/* Разделитель */
 .article-separator {
     opacity: 0.55;
     margin: 0 12px;
 }
 
+/* Форма статьи */
 .article-form {
     background: linear-gradient(145deg, #2a1f1c, #3a2f2a);
     border-radius: 20px;
@@ -994,6 +1193,7 @@ footer {
     justify-self: end;
 }
 
+/* Заголовок формы */
 .article-form-title {
     margin: 0 0 20px;
     color: #fff;
@@ -1001,6 +1201,7 @@ footer {
     font-weight: 700;
 }
 
+/* Подписи полей */
 .article-form label {
     display: block;
     margin-bottom: 8px;
@@ -1009,6 +1210,7 @@ footer {
     font-weight: 600;
 }
 
+/* Поля формы */
 .article-form input,
 .article-form textarea {
     width: 100%;
@@ -1024,22 +1226,26 @@ footer {
     outline: none;
 }
 
+/* Поле текста */
 .article-form textarea {
     height: 130px;
     resize: vertical;
 }
 
-.article-form textarea#article-content {
-    min-height: 200px;
-    height: 200px;
-}
+    /* Поле содержания статьи */
+    .article-form textarea#article-content {
+        min-height: 200px;
+        height: 200px;
+    }
 
-.article-form input:focus,
-.article-form textarea:focus {
-    border-color: #8FA396;
-    box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
-}
+    /* Фокус на поле */
+    .article-form input:focus,
+    .article-form textarea:focus {
+        border-color: #8FA396;
+        box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
+    }
 
+/* Кнопка отправки */
 .article-submit {
     width: auto;
     display: block;
@@ -1054,16 +1260,19 @@ footer {
     transition: all 0.3s ease;
 }
 
-.article-submit:hover {
-    background-color: #7a8f80;
-}
+    /* Наведение на кнопку */
+    .article-submit:hover {
+        background-color: #7a8f80;
+    }
 
+/* Примечание к форме */
 .article-required-note {
     margin: 14px 0 0;
     font-size: 14px;
     color: rgba(201, 184, 160, 0.85);
 }
 
+/* Ошибка формы */
 .article-error {
     color: #ffb3a7;
     font-size: 14px;
@@ -1071,12 +1280,13 @@ footer {
     margin-bottom: 14px;
 }
 
+/* Поле с ошибкой */
 .article-form input.error,
 .article-form textarea.error {
     border-color: #ff8a7a;
 }
 
-/* Article modal */
+/* Модальное окно статьи */
 .article-modal {
     position: fixed;
     inset: 0;
@@ -1091,11 +1301,13 @@ footer {
     transition: opacity 0.25s ease;
 }
 
-.article-modal.active {
-    display: flex;
-    opacity: 1;
-}
+    /* Активное модальное окно */
+    .article-modal.active {
+        display: flex;
+        opacity: 1;
+    }
 
+/* Контент модального окна */
 .article-modal-content {
     width: 90%;
     max-width: 720px;
@@ -1110,10 +1322,12 @@ footer {
     transition: transform 0.25s ease;
 }
 
+/* Появление модального окна */
 .article-modal.active .article-modal-content {
     transform: translateY(0);
 }
 
+/* Кнопка закрытия */
 .article-modal-close {
     position: absolute;
     top: 16px;
@@ -1130,11 +1344,13 @@ footer {
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.article-modal-close:hover {
-    background: rgba(35, 24, 21, 0.75);
-    transform: translateY(-1px);
-}
+    /* Наведение на закрытие */
+    .article-modal-close:hover {
+        background: rgba(35, 24, 21, 0.75);
+        transform: translateY(-1px);
+    }
 
+/* Заголовок модального окна */
 .article-modal-title {
     margin: 6px 46px 12px 0;
     color: #fff;
@@ -1143,6 +1359,7 @@ footer {
     line-height: 1.25;
 }
 
+/* Данные статьи */
 .article-modal-meta {
     display: flex;
     align-items: center;
@@ -1153,12 +1370,14 @@ footer {
     font-size: 16px;
 }
 
+/* Элемент данных */
 .article-modal-meta-item {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+/* Иконка данных */
 .article-modal-icon {
     width: 18px;
     height: 18px;
@@ -1168,10 +1387,12 @@ footer {
     opacity: 0.9;
 }
 
+/* Разделитель */
 .article-modal-separator {
     opacity: 0.45;
 }
 
+/* Изображение статьи */
 .article-modal-image {
     width: 100%;
     max-height: 240px;
@@ -1182,6 +1403,7 @@ footer {
     margin: 18px 0 22px;
 }
 
+/* Текст статьи */
 .article-modal-text {
     margin-top: 0;
     font-size: 17px;
@@ -1190,6 +1412,7 @@ footer {
     white-space: pre-line;
 }
 
+/* Адаптация модального окна */
 @media (max-width: 520px) {
     .article-modal-content {
         padding: 18px;
@@ -1209,14 +1432,17 @@ footer {
     }
 }
 
+/* Активный пункт меню */
 .nav-active {
     color: #8FA396 !important;
 }
 
+/* Активная кнопка контактов */
 .btn-contact.nav-active {
     color: #fff !important;
 }
 
+/* Адаптация страниц */
 @media (max-width: 992px) {
     .reviews-grid {
         grid-template-columns: 1fr;
@@ -1237,6 +1463,7 @@ footer {
     }
 }
 
+/* Адаптация страницы статей */
 @media (max-width: 900px) {
     .articles-page {
         padding-top: 24px;
@@ -1278,123 +1505,3 @@ footer {
         font-size: 16px;
     }
 }
-
-@media (max-width: 767px) {
-    .reviews-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .reviews-title {
-        font-size: 24px;
-    }
-
-    .review-form-block,
-    .reviews-list-block {
-        padding: 20px;
-        border-radius: 16px;
-    }
-
-    .reviews-sort-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-review-sort,
-    .btn-review-submit {
-        width: 100%;
-    }
-}
-
-.review-form-block {
-    max-width: 390px;
-}
-
-.review-form-title {
-    margin: 0 0 20px;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.review-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.review-input,
-.review-textarea,
-.reviews-sort-select {
-    width: 100%;
-    max-width: 100%;
-    background-color: rgba(35, 24, 21, 0.55);
-    border: 1px solid rgba(201, 184, 160, 0.25);
-    border-radius: 12px;
-    padding: 11px 14px;
-    color: #E6D5B8;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.review-input,
-.reviews-sort-select {
-    height: 44px;
-}
-
-.review-textarea {
-    min-height: 130px;
-    resize: none;
-}
-
-.review-input:focus,
-.review-textarea:focus,
-.reviews-sort-select:focus {
-    border-color: #8FA396;
-    box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
-}
-
-.btn-review-submit {
-    width: auto;
-    display: block;
-    margin: 4px auto 0;
-    border: none;
-    background-color: #8FA396;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 28px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.btn-review-submit:hover {
-    background-color: #7a8f80;
-}
-
-.btn-review-sort {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 0;
-}
-
-@media (max-width: 767px) {
-    .review-form-block {
-        max-width: 100%;
-    }
-
-    .reviews-list-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-review-sort {
-        width: auto;
-        margin: 0 0 18px auto;
-        display: inline-flex;
-    }
-}
-
