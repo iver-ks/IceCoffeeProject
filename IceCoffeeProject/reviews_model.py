@@ -80,7 +80,7 @@ def validate_review(author, review_date, text, existing_reviews=None):
         try:
             parsed_date = datetime.strptime(date_value, "%d.%m.%Y").date()
         except ValueError:
-            errors["date"] = "Введите дату в формате ДД.ММ.ГГГГ."
+            errors["date"] = "Введите корректную дату посещения."
 
         if parsed_date is not None:
             if parsed_date < date(2025, 1, 1):
