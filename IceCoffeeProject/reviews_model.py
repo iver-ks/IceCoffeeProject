@@ -77,9 +77,16 @@ def validate_review(author, review_date, text, existing_reviews=None):
         errors["date"] = "Укажите дату посещения кофейни."
     else:
         parsed_date = None
-        # Проверяем, что дата посещения не позже текущей даты
-        if parsed_date is not None and parsed_date > date.today():
-            errors["date"] = "Дата посещения не может быть позже текущей даты."
+        try:
+            parsed_date = datetime.strptime(date_value, "%d.%m.%Y").date()
+        except ValueError:
+            errors["date"] = "Введите дату в формате ДД.ММ.ГГГГ."
+
+        if parsed_date is not None:
+            if parsed_date < date(2025, 1, 1):
+                errors["date"] = "Дата посещения не может быть раньше 2025 года."
+            elif parsed_date > date.today():
+                errors["date"] = "Дата посещения не может быть позже текущей даты."
 
     # Проверка текста отзыва
     if not text_value:
