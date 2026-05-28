@@ -1,7 +1,8 @@
-"""Model helpers for reading, validating, and storing articles."""
+
 
 import json
 import os
+import re
 from datetime import date, datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,11 +36,11 @@ def save_articles(articles):
 def validate_article_form(form):
     """Validate form payload and return (errors, values)."""
     values = {
-        "author": _safe_getunicode(form, "author").strip(),
-        "title": _safe_getunicode(form, "title").strip(),
-        "description": _safe_getunicode(form, "description").strip(),
-        "content": _safe_getunicode(form, "content").strip(),
-        "date": _safe_getunicode(form, "date").strip(),
+        "author": _safe_text(form, "author"),
+        "title": _safe_text(form, "title"),
+        "description": _safe_text(form, "description"),
+        "content": _safe_text(form, "content"),
+        "date": _safe_text(form, "date"),
     }
     errors = {}
 
@@ -47,6 +48,7 @@ def validate_article_form(form):
     _validate_length(values, errors, "title", 5, 100, "Название")
     _validate_length(values, errors, "description", 20, 250, "Описание")
     _validate_length(values, errors, "content", 100, 5000, "Основной текст")
+    _validate_author(values, errors)
 
     if not values["date"]:
         errors["date"] = "Дата публикации обязательна"
@@ -55,7 +57,7 @@ def validate_article_form(form):
             parsed_date = datetime.strptime(values["date"], "%d.%m.%Y").date()
             if parsed_date > date.today():
                 errors["date"] = "Дата публикации не может быть из будущего"
-        except ValueError:
+        except (TypeError, ValueError):
             errors["date"] = "Дата должна быть в формате ДД.ММ.ГГГГ"
 
     return errors, values
@@ -97,8 +99,29 @@ def _validate_length(values, errors, field, min_len, max_len, label):
         errors[field] = f"{label} должно содержать максимум {max_len} символов"
 
 
+def _validate_author(values, errors):
+    if "author" in errors:
+        return
+
+    author = values.get("author", "")
+    if not re.fullmatch(r"[A-Za-zА-Яа-яЁё]+(?:[ -][A-Za-zА-Яа-яЁё]+)*", author):
+        errors["author"] = "Имя автора содержит недопустимые символы"
+
+
 def _safe_getunicode(form, key):
-    getter = getattr(form, "getunicode", None)
-    if callable(getter):
-        return getter(key) or ""
-    return form.get(key) or ""
+    try:
+        getter = getattr(form, "getunicode", None)
+        if callable(getter):
+            return getter(key) or ""
+        return form.get(key) or ""
+    except (AttributeError, TypeError, ValueError):
+        return ""
+
+
+def _safe_text(form, key):
+    value = _safe_getunicode(form, key)
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        value = str(value)
+    return value.strip()
