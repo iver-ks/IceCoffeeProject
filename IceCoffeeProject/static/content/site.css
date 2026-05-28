@@ -553,6 +553,18 @@ footer {
     padding: 40px 0 70px;
 }
 
+.reviews-layout {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.45fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.reviews-list-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .reviews-title {
     text-align: center;
     font-size: 56px;
@@ -581,11 +593,21 @@ footer {
 
 .review-form-block {
     max-width: 460px;
+    width: 100%;
 }
 
 .reviews-list-block {
     max-width: 1100px;
+    width: 100%;
+    position: relative;
     scroll-margin-top: 40px;
+}
+
+.reviews-list-title {
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .review-form-title {
@@ -729,6 +751,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -1234,6 +1257,10 @@ footer {
 }
 
 @media (max-width: 767px) {
+    .reviews-layout {
+        grid-template-columns: 1fr;
+    }
+
     .reviews-title {
         font-size: 24px;
     }
@@ -1252,6 +1279,87 @@ footer {
     .btn-review-sort,
     .btn-review-submit {
         width: 100%;
+    }
+}
+
+.review-form-block {
+    max-width: 390px;
+}
+
+.review-form-title {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.review-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.review-input,
+.review-textarea,
+.reviews-sort-select {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(35, 24, 21, 0.55);
+    border: 1px solid rgba(201, 184, 160, 0.25);
+    border-radius: 12px;
+    padding: 11px 14px;
+    color: #E6D5B8;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.review-input,
+.reviews-sort-select {
+    height: 44px;
+}
+
+.review-textarea {
+    min-height: 130px;
+    resize: none;
+}
+
+.review-input:focus,
+.review-textarea:focus,
+.reviews-sort-select:focus {
+    border-color: #8FA396;
+    box-shadow: 0 0 0 2px rgba(143, 163, 150, 0.18);
+}
+
+.btn-review-submit {
+    width: auto;
+    display: block;
+    margin: 4px auto 0;
+    border: none;
+    background-color: #8FA396;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-review-submit:hover {
+    background-color: #7a8f80;
+}
+
+@media (max-width: 767px) {
+    .review-form-block {
+        max-width: 100%;
+    }
+
+    .btn-review-sort {
+        position: static;
+        width: auto;
+        margin: 0 0 18px auto;
     }
 }
 

@@ -32,6 +32,21 @@ def normalize_text(value):
     return value
 
 
+def normalize_review_date(value):
+    """Convert review date input to ISO format for storage and comparison."""
+    normalized = normalize_text(value).strip()
+    if not normalized:
+        return ""
+
+    for fmt in ("%d.%m.%Y", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(normalized, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+
+    return normalized
+
+
 def reviews_context(sort_order="new", form_data=None, errors=None, success_message=""):
     """Build the template context for the reviews page."""
     if form_data is None:
@@ -111,6 +126,7 @@ def reviews_post():
         "date": normalize_text(request.forms.get("date", "")).strip(),
         "text": normalize_text(request.forms.get("text", "")).strip(),
     }
+    normalized_date = normalize_review_date(form_data["date"])
 
     errors = {}
     if not form_data["rating"]:
@@ -121,7 +137,7 @@ def reviews_post():
     errors.update(
         validate_review(
             form_data["author"],
-            form_data["date"],
+            normalized_date,
             form_data["text"],
             existing_reviews=existing_reviews,
         )
@@ -133,7 +149,7 @@ def reviews_post():
     new_review = {
         "rating": int(form_data["rating"]),
         "author": form_data["author"],
-        "date": form_data["date"],
+        "date": normalized_date,
         "text": form_data["text"],
     }
     save_reviews([new_review] + existing_reviews)

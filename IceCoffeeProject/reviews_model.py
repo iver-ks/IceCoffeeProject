@@ -62,13 +62,17 @@ def validate_review(author, review_date, text, existing_reviews=None):
     if not date_value:
         errors["date"] = "Укажите дату посещения кофейни."
     else:
+        parsed_date = None
         try:
             parsed_date = datetime.strptime(date_value, "%Y-%m-%d").date()
         except ValueError:
-            errors["date"] = "Введите корректную дату посещения."
-        else:
-            if parsed_date > date.today():
-                errors["date"] = "Дата посещения не может быть позже текущей даты."
+            try:
+                parsed_date = datetime.strptime(date_value, "%d.%m.%Y").date()
+            except ValueError:
+                errors["date"] = "Введите корректную дату посещения."
+
+        if parsed_date is not None and parsed_date > date.today():
+            errors["date"] = "Дата посещения не может быть позже текущей даты."
 
     if not text_value:
         errors["text"] = "Введите текст отзыва."
@@ -112,13 +116,16 @@ def validate_review(author, review_date, text, existing_reviews=None):
 
 
 def sort_reviews(reviews, sort_order):
-    """Sort reviews by date in YYYY-MM-DD format."""
+    """Sort reviews by date."""
 
     def parse_date(item):
-        try:
-            return datetime.strptime(item.get("date", ""), "%Y-%m-%d")
-        except (TypeError, ValueError):
-            return datetime.min
+        value = item.get("date", "")
+        for fmt in ("%Y-%m-%d", "%d.%m.%Y"):
+            try:
+                return datetime.strptime(value, fmt)
+            except (TypeError, ValueError):
+                pass
+        return datetime.min
 
     reverse = sort_order != "old"
     return sorted(reviews, key=parse_date, reverse=reverse)
