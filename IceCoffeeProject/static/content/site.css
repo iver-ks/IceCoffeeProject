@@ -603,8 +603,16 @@ footer {
     scroll-margin-top: 40px;
 }
 
+.reviews-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
 .reviews-list-title {
-    margin: 0 0 18px;
+    margin: 0;
     color: #fff;
     font-size: 30px;
     font-weight: 700;
@@ -724,8 +732,23 @@ footer {
 }
 
 .btn-review-submit:hover,
-.btn-review-sort:hover {
+.btn-review-sort:hover,
+.btn-review-more:hover {
     background-color: #7a8f80;
+    color: #fff;
+}
+
+.btn-review-more {
+    width: auto;
+    display: inline-block;
+    outline: none;
+}
+
+.btn-review-more:focus,
+.btn-review-more:focus-visible,
+.btn-review-more:active {
+    outline: none;
+    box-shadow: none;
     color: #fff;
 }
 
@@ -1351,15 +1374,27 @@ footer {
     background-color: #7a8f80;
 }
 
+.btn-review-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
 @media (max-width: 767px) {
     .review-form-block {
         max-width: 100%;
     }
 
+    .reviews-list-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .btn-review-sort {
-        position: static;
         width: auto;
         margin: 0 0 18px auto;
+        display: inline-flex;
     }
 }
 

@@ -34,7 +34,7 @@
 
                     <div class="review-form-group">
                         <label class="review-label" for="author">Ваше имя</label>
-                        <input id="author" name="author" type="text" class="review-input" placeholder="Ваше имя" value="{{ form_data.get('author', '') }}">
+                        <input id="author" name="author" type="text" class="review-input" placeholder="Укажите ваше имя" value="{{ form_data.get('author', '') }}">
                         <div class="field-error">{{ errors.get('author', '') }}</div>
                     </div>
 
@@ -58,7 +58,8 @@
 
         <div class="reviews-list-column">
             <div class="reviews-list-block" id="reviews-list">
-                <h2 class="reviews-list-title">Отзывы</h2>
+                <div class="reviews-list-header">
+                    <h2 class="reviews-list-title">Отзывы</h2>
                     <button type="button" class="articles-sort-btn btn-review-sort" id="reviews-sort-btn" data-sort="{{ sort_order }}">
                         <span class="articles-sort-icon" aria-hidden="true">
                             % if sort_order == "old":
@@ -79,6 +80,7 @@
                         <span class="articles-sort-text">Сначала новые</span>
                         % end
                     </button>
+                </div>
 
                 % if reviews:
                 <div class="reviews-grid" id="reviews-grid">
